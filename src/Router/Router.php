@@ -15,4 +15,16 @@ class Router
         $this->container = $container;
         return $this;
     }
+
+    public function route()
+    {
+        $route =  $_GET['route'];
+        if(isset($this->config[$route])){
+            $controller = $this->container->get($this->config[$route]);
+            echo $controller->indexAction();
+        } else {
+            header("HTTP/1.0 404 Not Found");
+            echo ' Page non trouvée ';
+        }
+    }
 }
