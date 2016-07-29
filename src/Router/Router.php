@@ -21,7 +21,7 @@ class Router
      * @param array $config
      * @param ContainerInterface $container
      */
-    public function __construct(array $config = [], ContainerInterface $container)
+    public function __construct(array $config, ContainerInterface $container)
     {
         $this->config = $config;
         $this->container = $container;
